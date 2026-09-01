@@ -10,4 +10,10 @@ from .serializers import ProductSerializer
 def products(request):
     items = Product.objects.all()
     items_serialized = ProductSerializer(items, many=True)
-    return Response(items_serialized.data, status=status.HTTP_200_OK)
+    return Response(
+        items_serialized.data,
+        status=status.HTTP_200_OK,
+        headers={
+            "Access-Control-Allow-Origin": "https://brroman.github.io/encasaconmaria-frontend",
+        },
+    )
