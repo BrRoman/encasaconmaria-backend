@@ -14,6 +14,6 @@ def products(request):
         items_serialized.data,
         status=status.HTTP_200_OK,
         headers={
-            "Access-Control-Allow-Origin": "https://brroman.github.io/encasaconmaria-frontend",
+            "Access-Control-Allow-Origin": "https://brroman.github.io",
         },
     )
