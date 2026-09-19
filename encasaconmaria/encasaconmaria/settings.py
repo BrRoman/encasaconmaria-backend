@@ -126,6 +126,6 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # CORS HEADERS
 CORS_ALLOWED_ORIGINS = [
-    "https://brroman.github.io",
-    "http://localhost:5173"
+    "https://encasaconmaria.vercel.app",
+    "http://localhost:3000",
 ]
