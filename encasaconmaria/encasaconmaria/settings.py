@@ -127,7 +127,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'statics'
 
 
-#  REST FRAMEWORK
+# REST FRAMEWORK
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
