@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-2$a1)k1hs9%jba_^z5=_@jh601=8_rz_v!#vg!%t4#^6$f)m8m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nico3113.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'nico3113.pythonanywhere.com']
 
 
 # Application definition
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
 
     'corsheaders',
     'rest_framework',
+    'rest_framework_simplejwt',
 
     'api',
 ]
@@ -124,8 +127,22 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
+#  REST FRAMEWORK
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+
+
 # CORS HEADERS
 CORS_ALLOWED_ORIGINS = [
     "https://encasaconmaria.vercel.app",
     "http://localhost:3000",
 ]
+
+
+# JWT SETTINGS
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+}
